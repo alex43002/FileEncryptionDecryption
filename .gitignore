@@ -1,0 +1,52 @@
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Compiled object files
+*.o
+*.obj
+*.exe
+*.out
+*.app
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+*.dll
+*.so
+*.dylib
+
+# Debug and profiling files
+*.dSYM/
+*.stackdump
+
+# Generated files from build systems like CMake or Make
+/CMakeFiles/
+/CMakeCache.txt
+/build/
+/dist/
+/Makefile
+
+# IDE settings
+.vscode/
+.idea/
+*.iml
+
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+*.swo
+*.bak
+
+# Generated files by IDEs or editors
+*.sln
+*.vcxproj
+*.user
+*.suo
+*.ncb
+*.mode1v3
+*.mode2v3
+*.ide
