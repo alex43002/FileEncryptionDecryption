@@ -14,8 +14,8 @@ if exist %OUTPUT% (
     del %OUTPUT%
 )
 
-rem Compile all .cpp files in the directory
-g++ *.cpp -o %OUTPUT%
+rem Compile all .cpp files in the directory and the util directory
+g++ *.cpp util\*.cpp -o %OUTPUT%
 
 rem Check if the compilation was successful
 if %errorlevel% neq 0 (
