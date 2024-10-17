@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "util/Help.h"
+#include "util/help/Help.h"
 
 void processCommandLineArguments(int argc, char* argv[]) {
     if (argc < 2) {
