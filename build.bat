@@ -24,7 +24,7 @@ for /R %%f in (*.cpp) do (
 )
 
 rem Compile all found .cpp files
-g++ %SRC_FILES% -o %OUTPUT%
+g++ -std=c++20 %SRC_FILES% -o %OUTPUT%
 
 rem Check if the compilation was successful
 if %errorlevel% neq 0 (
