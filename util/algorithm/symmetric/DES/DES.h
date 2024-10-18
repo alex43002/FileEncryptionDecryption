@@ -1,7 +1,7 @@
 #ifndef DES_H
 #define DES_H
 
-#include "../CryptoAlgorithm.h"
+#include "../../CryptoAlgorithm.h"
 #include <string>
 #include <iostream>
 
