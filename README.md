@@ -1,14 +1,13 @@
 # FileEncryptionDecryption
 
-FileEncryptionDecryption is a versatile tool designed for encrypting and decrypting files using various encryption techniques. The project supports both a command-line interface (CLI) and a graphical user interface (GUI) to provide flexibility for different users. 
+FileEncryptionDecryption is a versatile tool designed for encrypting and decrypting files using various encryption techniques. The project currently supports a **command-line interface (CLI)**, with plans to add a graphical user interface (GUI) in future versions.
 
 ## Functionality
 
 This tool allows users to:
 - Encrypt and decrypt text or binary files.
-- Choose from multiple encryption methods (e.g., Caesar Cipher, XOR encryption, etc.).
-- Specify custom encryption keys.
-- (WIP) Advanced encryption algorithms such as AES and RSA.
+- Choose from multiple encryption algorithms, such as **DES** (with more to be added, e.g., AES, RSA).
+- Provide custom encryption keys for security.
 - (WIP) Support for encrypting entire directories.
 - (WIP) Save and load encryption settings.
 
@@ -16,33 +15,46 @@ This tool allows users to:
 
 Once you have built the executable for the CLI version, you can use it as follows:
 
-1. **Encrypting a File**
-    ```bash
-    ./fileencrypt --encrypt --file <file_path> --method <encryption_method> --key <encryption_key>
-    ```
-    Example:
-    ```bash
-    ./fileencrypt --encrypt --file myfile.txt --method XOR --key 12345
-    ```
+### 1. **Encrypting a File**
+   The tool supports the following usage pattern for encryption:
+   ```bash
+   encryption_tool.exe --encrypt <encryption_method> <encryption_key> <input_file> <output_file>
+   ```
+   Example:
+   ```bash
+   encryption_tool.exe --encrypt DES my_secret_key input.txt encrypted_output.txt
+   ```
 
-2. **Decrypting a File**
-    ```bash
-    ./fileencrypt --decrypt --file <file_path> --method <encryption_method> --key <decryption_key>
-    ```
-    Example:
-    ```bash
-    ./fileencrypt --decrypt --file myfile_encrypted.txt --method XOR --key 12345
-    ```
+### 2. **Decrypting a File**
+   The tool supports the following usage pattern for decryption:
+   ```bash
+   encryption_tool.exe --decrypt <encryption_method> <encryption_key> <input_file> <output_file>
+   ```
+   Example:
+   ```bash
+   encryption_tool.exe --decrypt DES my_secret_key encrypted_output.txt decrypted_output.txt
+   ```
 
-3. **Command-line Options**:
-    - `--encrypt`: Encrypt the specified file.
-    - `--decrypt`: Decrypt the specified file.
-    - `--file <file_path>`: The file to encrypt or decrypt.
-    - `--method <encryption_method>`: Choose the encryption method (e.g., Caesar, XOR).
-    - `--key <key>`: Provide a custom encryption key.
-  
-4. **(WIP) Encryption of Directories**:
-    Placeholder for when directory encryption is implemented.
+### 3. **Command-line Options**:
+   - `--encrypt`: Encrypt the specified input file using the chosen algorithm and save it to the output file.
+   - `--decrypt`: Decrypt the specified input file using the chosen algorithm and save it to the output file.
+   - `<encryption_method>`: Choose the encryption algorithm (e.g., `DES`). More methods will be added (e.g., AES, RSA).
+   - `<encryption_key>`: Provide a custom encryption key for encryption or decryption.
+   - `<input_file>`: The file to encrypt or decrypt.
+   - `<output_file>`: The file where the encrypted or decrypted result will be saved.
+
+### Example Usages:
+1. **Encrypting with DES**:
+   ```bash
+   encryption_tool.exe --encrypt DES my_secret_key input.txt output_encrypted.txt
+   ```
+2. **Decrypting with DES**:
+   ```bash
+   encryption_tool.exe --decrypt DES my_secret_key output_encrypted.txt output_decrypted.txt
+   ```
+
+### 4. **(WIP) Encryption of Directories**:
+   Placeholder for when directory encryption is implemented.
 
 ## Building the Executables
 
@@ -50,27 +62,52 @@ Once you have built the executable for the CLI version, you can use it as follow
 
 Before building the project, ensure that you have the following installed:
 - C++ compiler (e.g., GCC or MSVC)
-- (Optional) A GUI framework if you are building the GUI version
 
-### Building the CLI Tool
+### Windows: Using `build.bat`
 
-To build the command-line executable:
+For Windows users, you can use the provided `build.bat` script to compile the project.
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/FileEncryptionDecryption.git
+    git clone https://github.com/alex43002/FileEncryptionDecryption.git
     cd FileEncryptionDecryption
     ```
 
-2. Compile the CLI tool:
+2. Run the `build.bat` script:
     ```bash
-    g++ -o fileencrypt cli.cpp encryption.cpp -std=c++11
+    build.bat
     ```
 
-3. Run the executable:
+3. Once the build is complete, you can run the executable:
     ```bash
-    ./fileencrypt --help
+    encryption_tool.exe --help
     ```
+
+### Linux: Using `build.sh`
+
+For Linux users, you can use the provided `build.sh` script to compile the project.
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/alex43002/FileEncryptionDecryption.git
+    cd FileEncryptionDecryption
+    ```
+
+2. Make the script executable:
+    ```bash
+    chmod +x build.sh
+    ```
+
+3. Run the script:
+    ```bash
+    ./build.sh
+    ```
+
+4. Once the build is complete, you can run the executable:
+    ```bash
+    ./encryption_tool --help
+    ```
+
 
 ### Building the GUI Tool (WIP)
 
