@@ -1,11 +1,11 @@
 #include "DES.h"
 
-void DES::encrypt(const std::string& inputFile) {
-    std::cout << "Encrypting " << inputFile << " using DES..." << std::endl;
-    // Actual DES encryption logic goes here
+void DES::encrypt(const std::string& inputFile, const std::string& outputFile) {
+    std::cout << "Encrypting " << inputFile << " using DES with key: " << key << std::endl;
+    // DES encryption logic using the key
 }
 
-void DES::decrypt(const std::string& inputFile) {
-    std::cout << "Decrypting " << inputFile << " using DES..." << std::endl;
-    // Actual DES decryption logic goes here
+void DES::decrypt(const std::string& inputFile, const std::string& outputFile) {
+    std::cout << "Decrypting " << inputFile << " using DES with key: " << key << std::endl;
+    // DES decryption logic using the key
 }

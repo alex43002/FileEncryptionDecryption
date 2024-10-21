@@ -2,13 +2,13 @@
 #define DES_H
 
 #include "../../CryptoAlgorithm.h"
-#include <string>
 #include <iostream>
+#include <string>
 
 class DES : public CryptoAlgorithm {
 public:
-    void encrypt(const std::string& inputFile) override;  // Override the base class's encrypt method
-    void decrypt(const std::string& inputFile) override;  // Override the base class's decrypt method
+    void encrypt(const std::string& inputFile, const std::string& outputFile) override;
+    void decrypt(const std::string& inputFile, const std::string& outputFile) override;
 };
 
 #endif // DES_H
