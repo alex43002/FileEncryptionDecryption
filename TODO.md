@@ -1,7 +1,7 @@
 # TODO: Encryption Tool Enhancements
 
 ## General Tasks
-- [ ] Add a command-line parameter for the encryption key.
+- [x] Add a command-line parameter for the encryption key.
 
 ## DES Algorithm Implementation
 - [ ] Research and understand the structure of DES (Data Encryption Standard).
@@ -23,6 +23,5 @@
 - [ ] Ensure proper handling of edge cases (e.g., key length, empty files).
 
 ## Documentation
-- [ ] Update the help output for the new encryption key parameter.
+- [x] Update the help output for the new encryption key parameter.
 - [ ] Add instructions for using the DES algorithm in the documentation.
-
