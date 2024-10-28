@@ -38,21 +38,22 @@ void processFile(const std::string& action, const std::string& algorithm, const 
 
 // Function to validate and process the command-line arguments
 void processCommandLineArguments(int argc, char* argv[]) {
-    if (argc < 6) {
+    if (argc != 2 && argc != 6) {
         std::cerr << "Error: Invalid number of arguments." << std::endl;
         std::cerr << "Usage: encryption_tool.exe --[encrypt/decrypt] [encryption_type] [encryption_key] [input_file] [output_file]" << std::endl;
         return;
     }
 
     std::string action = argv[1];
-    std::string algorithm = argv[2];
-    std::string key = argv[3];  // Encryption key
-    std::string inputFile = argv[4];
-    std::string outputFile = argv[5];
-
+    
     if (action == "--help") {
         displayHelp();
     } else if (action == "--encrypt" || action == "--decrypt") {
+        std::string algorithm = argv[2];
+        std::string key = argv[3];  // Encryption key
+        std::string inputFile = argv[4];
+        std::string outputFile = argv[5];
+
         processFile(action, algorithm, key, inputFile, outputFile);
     } else {
         std::cerr << "Error: Unknown action '" << action << "'." << std::endl;
